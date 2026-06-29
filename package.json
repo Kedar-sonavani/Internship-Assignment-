@@ -1,0 +1,28 @@
+{
+  "name": "adaptive-cart-engine",
+  "version": "1.0.0",
+  "description": "Adaptive Cart Engine — multi-tenant shopping cart microservice",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "nodemon src/server.js",
+    "test": "jest",
+    "test:unit": "jest --testPathPattern=unit",
+    "test:property": "jest --testPathPattern=property",
+    "test:integration": "jest --testPathPattern=integration"
+  },
+  "dependencies": {
+    "express": "5.2.1",
+    "mongoose": "9.7.3",
+    "joi": "18.2.3",
+    "ioredis": "5.11.1",
+    "dotenv": "17.4.2"
+  },
+  "devDependencies": {
+    "jest": "30.4.2",
+    "supertest": "7.2.2",
+    "fast-check": "4.8.0",
+    "@shelf/jest-mongodb": "6.0.2",
+    "nodemon": "3.1.14"
+  }
+}

@@ -1,0 +1,34 @@
+[
+  {
+    "id": "tier-1",
+    "label": "Welcome Tier",
+    "minSubtotal": 50,
+    "minCategories": 1,
+    "discountType": "percentage",
+    "discountValue": 5
+  },
+  {
+    "id": "tier-2",
+    "label": "Standard Tier",
+    "minSubtotal": 100,
+    "minCategories": 2,
+    "discountType": "percentage",
+    "discountValue": 10
+  },
+  {
+    "id": "tier-3",
+    "label": "Premium Tier",
+    "minSubtotal": 200,
+    "minCategories": 3,
+    "discountType": "fixed",
+    "discountValue": 25
+  },
+  {
+    "id": "tier-4",
+    "label": "Elite Tier",
+    "minSubtotal": 500,
+    "minCategories": 2,
+    "discountType": "percentage",
+    "discountValue": 20
+  }
+]
