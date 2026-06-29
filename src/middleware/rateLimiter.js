@@ -6,13 +6,6 @@ const WINDOW_SIZE_MS = 60 * 1000; // 60 seconds
 const MAX_REQUESTS = 60;
 
 /**
- * Get the current time in seconds (for Redis EXPIRE)
- */
-function nowSeconds() {
-  return Math.floor(Date.now() / 1000);
-}
-
-/**
  * Redis-based rate limiter using sliding window
  */
 async function checkRateLimitRedis(userId) {
@@ -111,10 +104,11 @@ function rateLimiterMiddleware(req, res, next) {
   Promise.resolve(checkLimit(userId)).then(result => {
     if (!result.allowed) {
       const retryAfterSeconds = result.retryAfterSeconds;
+      res.set('Retry-After', retryAfterSeconds.toString());
       return res.status(429).json({
         error: 'Rate limit exceeded',
         retryAfterSeconds
-      }).set('Retry-After', retryAfterSeconds.toString());
+      });
     }
     next();
   }).catch(err => {

@@ -7,9 +7,9 @@
     "start": "node src/server.js",
     "dev": "nodemon src/server.js",
     "test": "jest",
-    "test:unit": "jest --testPathPattern=unit",
-    "test:property": "jest --testPathPattern=property",
-    "test:integration": "jest --testPathPattern=integration"
+    "test:unit": "jest --testPathPatterns=unit",
+    "test:property": "jest --testPathPatterns=property",
+    "test:integration": "jest --testPathPatterns=integration"
   },
   "dependencies": {
     "express": "5.2.1",

@@ -16,9 +16,8 @@ const cartSchema = new mongoose.Schema({
 });
 
 // Pre-save hook to update updatedAt
-cartSchema.pre('save', function(next) {
+cartSchema.pre('save', function() {
   this.updatedAt = Date.now();
-  next();
 });
 
 const Cart = mongoose.model('Cart', cartSchema);

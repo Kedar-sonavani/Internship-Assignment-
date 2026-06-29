@@ -37,7 +37,7 @@ const postCartItemSchema = Joi.object({
   userId: Joi.string().min(1).required(),
   productId: Joi.string().min(1).required(),
   name: Joi.string().min(1).required(),
-  price: Joi.number().positive().finite().required(),
+  price: Joi.number().positive().required(),
   quantity: Joi.number().integer().min(0).required(),
   category: Joi.string().min(1).required()
 });
